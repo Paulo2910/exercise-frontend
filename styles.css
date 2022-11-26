@@ -1,0 +1,162 @@
+/* dependencias e inclusões, nesse caso normalização e fonte*/
+@import url('https://yarnpkg.com/en/package/normalize.css'); /*folha de normalização de estilo*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,700&display=swap'); /*importando font*/
+
+/*Variaveis, coisas que vamos usar constantemente no codigo*/
+
+/*o root é o elemento mais alto do html e pode manipular algumas janelas coisas que a tag html não pode
+o que esta inserido aqui pode ser acessado por todos os elementos do codigo*/
+
+/*para declarar variavel em CSS insira '--' e depois o nome da variavel*/
+:root{
+--size_xl: 3rem; /*tamanho padrão, são multiplos que definem os maiores e menores tamanhos*/
+--size_lg: 2rem;
+--size_md: 1rem;
+--size_sm: .8rem;
+--size_xs: .4rem;
+
+--bg_primary__main: #141414; /*cores de fundo*/
+--bg_primary__alt: #1c1c1c;
+--bg_secondary__main: rgba(217,217,217, .1);
+--bg_secondary__alt:  rgba(217,217,217, .05);
+--fg_primary:#fff;
+--_hightlight: #0436b8;
+
+--font_main: "Montserrat";
+
+--black:900; /*fontes*/
+--bold:700;
+--regular:500;
+--thin: 400;
+
+}
+
+/*cores */
+
+body{
+    background-image: linear-gradient( /*aqui e para criar um degrade usando duas cores que armazenei em cima*/
+        90deg, /*aqui e a inclinação em graus, deg e de degree*/
+        var(--bg_primary__main),
+        var(--bg_primary__alt)
+    );
+}
+
+a, h1, p, footer{
+    color: var(--fg_primary);
+}
+
+section{
+    background-image: radial-gradient(
+        var(--bg_secondary__alt),
+        var(--bg_secondary__main)
+    );
+    border: var(--bg_secondary__main);
+}
+
+/*Tipografia*/
+a, h1, p, footer{
+    font-family: var(--font_main);
+    text-decoration: none;
+}
+
+header nav ul li a{
+    text-transform: uppercase; /*altera o tipo entre maiusculo e minisculo por exemplo*/
+    font-weight: var(--thin); /*tipo*/
+    font-size: var(--size_sm);
+}
+
+header nav li:hover a{ /* hover e para quando o mause esta em cima dele*/
+    font-weight: var(--black);/*peso da font*/
+}
+
+h1{
+    font-size: var(--size_xl);
+    font-weight: var(--bold);
+}
+
+.botao{
+        font-size: var(--size_md);/*tamaho da letra*/
+        font-weight: var(--bold);/*font*/
+        background-color: var(--_hightlight); /*cor*/
+}
+
+p{
+    font-size: var(--size_md);
+    font-weight: var(--thin);
+    margin-bottom: var(--size_xl);
+}
+
+footer{
+    font-size: var(--size_md);
+    font-weight: var(--thin);
+}
+
+/*estilos ou decorações*/
+
+section{
+    border-radius: var(--size_sm); /*borda arredondada e a cor dela*/
+    border: 1px solid;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+li{
+    display: inline-block;
+}
+
+.botao{
+    border-radius: var(--size_xs);
+    text-align: center;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+footer{
+    text-align: center;
+}
+
+
+/*Layout Espaçamentos*/
+
+body > *{/*esse > * diz que o que for definido aqui afetara tudo que esta imediadamente dentro do body*/
+    padding: var(--size_xl);
+}
+
+body > * > *{/*afeta todos os netos de body*/
+    padding:var(--size_sm)
+}
+
+section{
+    margin: var(--size_md)
+}
+
+figure{
+    display: flex;
+    align-self: center;
+}
+
+
+/*Grade*/
+
+nav ul {
+display: flex;
+justify-content: space-evenly;
+}
+
+main {
+    display: flex;
+    justify-content: space-around; /*defini a alocação dos itens dentro de main*/
+}
+
+section{
+    max-width: 900px; /*essa parte e para levar ao meio o conteudo principal e limmitar o tamanho*/
+    margin: 0 auto;
+    height: 450px;
+}
+
+article{
+    max-width: 400px;
+}
+
